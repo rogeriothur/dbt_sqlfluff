@@ -1,0 +1,13 @@
+-- Exemplo REAL de modelo que usa SOURCE (dados externos não gerenciados pelo dbt)
+-- A tabela 'external_categories' foi criada MANUALMENTE no DuckDB
+-- Não é um seed, não é um modelo dbt - é uma tabela externa
+{{ config(materialized='view') }}
+
+select
+    category_id,
+    category_name,
+    description,
+    current_timestamp as loaded_at
+from {{ source('external', 'external_categories') }}
+-- Usando source() porque 'external_categories' é uma tabela que já existe
+-- no banco de dados, NÃO foi criada pelo dbt (não é seed nem modelo)
