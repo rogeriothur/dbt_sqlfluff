@@ -1,0 +1,21 @@
+version: 2
+
+sources:
+  - name: external
+    description: |
+      Dados externos que já existem no DuckDB 
+      (NÃO gerenciados pelo dbt - foram criados manualmente ou por outro sistema)
+    schema: main
+    tables:
+      - name: external_categories
+        description: |
+          Tabela de categorias criada FORA do dbt.
+          Esta tabela foi criada manualmente no DuckDB usando read_csv_auto().
+          Por isso usamos source() ao invés de ref() para referenciá-la.
+        columns:
+          - name: category_id
+            description: ID único da categoria
+          - name: category_name
+            description: Nome da categoria
+          - name: description
+            description: Descrição da categoria
