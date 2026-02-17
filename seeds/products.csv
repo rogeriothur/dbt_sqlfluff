@@ -1,0 +1,6 @@
+product_id,product_name,category,price,stock_quantity
+1,Notebook,Electronics,2500.00,15
+2,Mouse,Electronics,45.00,50
+3,Teclado,Electronics,120.00,30
+4,Monitor,Electronics,800.00,20
+5,Webcam,Electronics,250.00,25

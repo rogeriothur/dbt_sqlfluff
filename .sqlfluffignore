@@ -1,0 +1,9 @@
+# Ignore dbt compilation artifacts
+target/
+dbt_packages/
+logs/
+
+# Ignore non-model SQL
+macros/
+seeds/
+tests/s

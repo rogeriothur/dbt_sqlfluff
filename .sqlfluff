@@ -1,0 +1,22 @@
+[sqlfluff]
+# SQL dialect (postgres, bigquery, snowflake, etc.)
+dialect = duckdb
+
+# Templater for dbt projects
+templater = dbt
+
+# Ignore types of errors
+ignore = templating,parsing
+
+# Exclude specific rules
+exclude_rules = LT03,ST06
+
+[sqlfluff:rules]
+# Rule-specific configuration
+capitalisation.keywords = lower
+comma_style = leading
+
+[sqlfluff:templater:dbt]
+# dbt-specific settings
+project_dir = ./
+profiles_dir = ./

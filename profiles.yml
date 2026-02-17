@@ -1,0 +1,7 @@
+sqlfluff_test:
+  outputs:
+    dev:
+      type: duckdb
+      path: ./dbt_duckdb.db
+      threads: 4
+  target: dev
